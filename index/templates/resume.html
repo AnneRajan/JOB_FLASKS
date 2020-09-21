@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOB-ROLE-PREDICTION</title>
+
+  <!-- Bootstrap -->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="C:\Users\Rajan\Documents\JOB\public\css\resumestyle.css">
+</head>
+<body>
+
+
+
+	<!-- download button -->
+
+	<div class="container" id="resume">
+
+		<div class="row">
+			<div class="col-sm-12">
+               
+                <!-- table begin -->
+
+
+				<table width="100%" id="table">
+
+					<!-- Row 1 begin -->
+
+					<tr id="tr1" onmouseenter="show('tr1')" onmouseleave="hide('tr1')" >
+						<td class="col-sm-3">
+							<p class="heading1" contenteditable="true">Details</p>
+								
+							</p>
+						</td>
+						
+					  </tr>
+
+					<tr id="tr1" onmouseenter="show('tr1')" onmouseleave="hide('tr1')" >
+
+                       <!-- right section begin -->
+
+						<td class="col-sm-3">
+							<p class="heading1" contenteditable="true">PROJECTS</p>
+						</td>
+ 
+                       <!-- right section end -->
+
+                       <!-- left section begin -->
+
+						<td contenteditable="true" id="td1" class="col-sm-8">
+							<p class="heading2"> Project Name
+								<button class="btn btn-success" contenteditable="false" onclick="addelement('1')">
+									<span class="glyphicon glyphicon-plus-sign"></span>
+								</button>
+							</p>
+							<ul>
+								<li><label for="tech">Technology Used:</label></li>
+								<li><label for="desc">Description:</label></li>
+							</ul>
+						</td>
+						<td class="col-sm-1">
+							<button class="btn btn-success" onclick="add('tr')">
+								<span class="glyphicon glyphicon-plus-sign"></span>
+							</button>
+							<button class="btn btn-danger" onclick="del('tr1')">
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+					    </td>
+
+                        <!-- left section end -->
+
+					</tr>
+                    
+                    <!-- Row 1 end -->
+
+                    <!-- Row 2 begin -->
+
+
+					<tr id="tr2" onmouseenter="show('tr2')" onmouseleave="hide('tr2')">
+                      
+                       <!-- right section begin -->
+
+						<td class="col-sm-3">
+							<p class="heading1" contenteditable="true">EDUCATION</p>
+						</td>
+
+                       <!-- right section end -->
+
+                       <!-- left section begin -->
+
+						<td  class="col-sm-8"contenteditable="true" id="td2">
+							<p class="heading2">College Name 
+								<button class="btn btn-success" contenteditable="false" onclick="addelement('2')">
+									<span class="glyphicon glyphicon-plus-sign"></span>
+								</button>
+							</p>
+							<ul>
+								<li>Major</li>
+								<li>About</li>
+							</ul>
+						</td>
+						<td class="col-sm-1">
+							<button class="btn btn-success" onclick="add('tr')">
+								<span class="glyphicon glyphicon-plus-sign"></span>
+							</button>
+							<button class="btn btn-danger" onclick="del('tr1')">
+								<span class="glyphicon glyphicon-trash"></span>
+							</button>
+					    </td>
+
+					  <!-- left section end -->
+					    
+					</tr>
+
+					<!-- Row 2 end -->
+					
+					<!--CERTIFICATIONS ROW-->
+
+					<tr id="tr2" onmouseenter="show('tr2')" onmouseleave="hide('tr2')">
+                      
+						<!-- right section begin -->
+ 
+						 <td class="col-sm-3">
+							 <p class="heading1" contenteditable="true">CERTIFICATIONS</p>
+						 </td>
+ 
+						<!-- right section end -->
+ 
+						<!-- left section begin -->
+ 
+						 <td  class="col-sm-8"contenteditable="true" id="td2">
+							 <p class="heading2">Certification Name
+								 <button class="btn btn-success" contenteditable="false" onclick="addelement('2')">
+									 <span class="glyphicon glyphicon-plus-sign"></span>
+								 </button>
+							 </p>
+							
+						 </td>
+						 <td class="col-sm-1">
+							 <button class="btn btn-success" onclick="add('tr')">
+								 <span class="glyphicon glyphicon-plus-sign"></span>
+							 </button>
+							 <button class="btn btn-danger" onclick="del('tr1')">
+								 <span class="glyphicon glyphicon-trash"></span>
+							 </button>
+						 </td>
+ 
+					   <!-- left section end -->
+						 
+					 </tr>
+
+<!--CeRT ends-->
+
+
+
+
+
+
+
+                
+                   <!--  Row 3 begin -->
+
+					<tr>
+
+						<!-- right section begin -->
+
+
+						<td class="col-sm-3" onmouseenter="show('skills')" onmouseleave="hide('skills')">
+				             <p class="heading1" >SKILLS</p>
+				             <span id="skills">
+				             	<input type="text" id="sk" >
+				             	<button class="btn btn-primary" onclick="add('skill')">
+				             		<span class="glyphicon glyphicon-plus-sign"></span>
+				             	</button>
+				             </span>
+						</td>
+
+
+
+						<!-- right section end -->
+
+						<!-- left section begin -->
+
+						<td class="col-sm-9" id="skill">
+							<span class="badge badge-primary m-5" id="s1" onmouseenter="show_d('s1')" onmouseleave="hide_d('s1')">Skill
+								<span class="glyphicon glyphicon-remove" onclick="del('s1')"></span>
+						    </span>
+						</td>
+
+
+						<!-- left section begin -->
+
+					</tr>
+
+
+                    <!-- Row 3 end -->
+
+
+
+
+					
+				</table>
+
+                <!-- table end -->
+
+			</div>
+		 </div>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="C:\Users\Rajan\Documents\JOB\public\js\resume.js"></script>
+	
+	<button class="btn btn-primary" id="download" onclick="PDF()" >download</button>
+
+
+</header>
+
+</body>
+
+
+
+</html>

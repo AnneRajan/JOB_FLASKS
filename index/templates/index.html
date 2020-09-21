@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOB-ROLE-PREDICTION</title>
+
+  <!-- Bootstrap -->
+  <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}">
+  <link href="{{url_for('static', filename='css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/prettyPhoto.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet">
+
+</head>
+
+<body class="homepage">
+  <header id="header">
+    <nav class="navbar navbar-fixed-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+          <a class="navbar-brand" href="/">Find Better..</a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="/">HOME</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item " >
+                        <a class="nav-link" href="{{ url_for('account') }}">ACCOUNT <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item " >
+                        <a class="nav-link" href="{{ url_for('logout') }}">LOGOUT <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    {% else %}
+                    <li class="nav-item " >
+                        <a class="nav-link" href="{{ url_for('login') }}">LOGIN <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item " >
+                        <a class="nav-link" href="{{ url_for('register') }}">REGISTER <span class="sr-only">(current)</span></a>
+                    </li>
+                    {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+      <!--/.container-->
+    </nav>
+    <!--/nav-->
+
+
+  <div class="slider">
+    <div class="container">
+      <div id="about-slider">
+        <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators visible-xs">
+            <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-slider" data-slide-to="1"></li>
+            <li data-target="#carousel-slider" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="{{ url_for('static', filename='images/slider-01.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <div class="item">
+              <img src="{{ url_for('static', filename='images/job1.jpg')}}" class="img-responsive" alt="">
+            </div>
+            <div class="item">
+              <img src="{{ url_for('static', filename='images/job3.jpg')}}" class="img-responsive" alt="">
+            </div>
+            
+
+          </div>
+
+          <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+						<i class="fa fa-angle-left"></i>
+					</a>
+
+          <a class=" right carousel-control hidden-xs" href="#carousel-slider" data-slide="next">
+						<i class="fa fa-angle-right"></i>
+					</a>
+        </div>
+        <!--/#carousel-slider-->
+      </div>
+      <!--/#about-slider-->
+    </div>
+  </div>
+  
+  <section id="feature" style="background-color:powderblue;">
+    <div class="container" >
+      <div class="center wow fadeInDown">
+      <br>
+        <h2>Our Motive</h2>
+        <p class="lead">Our main focus on the career area prediction of computer science domain candidates.</p>
+        <p class="lead">The Job Role Prediction is done by taking the following aspects into consideration.</p>
+      </div>
+      <div class="row" >
+        <div class="features">
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+              <i class="fa fa-book"></i>
+              <h2>Academic Percentage</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+              <i class="fa fa-laptop"></i>
+              <h2>Projects</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+              <i class="fa fa-check"></i>
+              <h2>Internships</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+              <i class="fa fa-trophy"></i>
+              <h2>Hackathons</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+              
+              <i class="fa fa-certificate"></i>
+              <h2>Certifications</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="feature-wrap">
+               <i class="fa fa-code"></i>
+              <h2>Coding Skills</h2>
+              <h3></h3>
+            </div>
+          </div>
+          <!--/.col-md-4-->
+        </div>
+        <!--/.services-->
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  
+  </section>
+  <!--/#feature-->
+
+
+<section id="about-us">
+ <div class="container">
+      <div class="skill-wrap clearfix">
+        <div class="center wow fadeInDown">
+       
+          <h2>Which Job-Profile best suits <span>You??</span></h2>
+          <p class="lead"></p>
+        </div>
+
+        <div class="row">
+        
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="joomla-skill">
+                <p><em>75%</em></p>
+                <p>Business Analyst</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+              <div class="html-skill">
+                <p><em>95%</em></p>
+                <p>Project Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+              <div class="css-skill">
+                <p><em>70%</em></p>
+                <p>DataBase Developer</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+              <div class="html-skill">
+                <p><em>95%</em></p>
+                <p>Technical Support</p>
+              </div>
+            </div>
+          </div>
+
+       
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="joomla-skill">
+                <p><em>80%</em></p>
+                <p>Software Developer</p>
+              </div>
+            </div>
+          </div>
+
+           
+          <div class="col-sm-4">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+              <div class="wp-skill">
+                <p><em>90%</em></p>
+                <p>Security Analyst</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+
+
+  <section id="middle" style="background-color:white;  >
+    
+        <!--/.col-sm-6-->
+
+        <div class= "col-sm-6 wow fadeInDown" style="background-color:white;">
+          <div class="accordion">
+         <br> <br> <br>
+            <div class="panel-group" id="accordion1">
+              <div class="panel panel-default">
+                <div class="panel-heading active">
+                  <h3 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
+                                  Which Skills required are for?
+                                  <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                              </h3>
+                </div>
+
+                <div id="collapseOne1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="media accordion-inner">
+                      
+                      <div class="media-body">
+                        <h4>Software Engineer</h4>
+                        <p>Computer programming and coding,Software development,Object-oriented design (OOD),Software testing and debugging,Problem solving and logical thinking,Written and verbal communication
+Teamwork. ...</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
+                                  Business Technology Analytics
+                                  <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                              </h3>
+                </div>
+                <div id="collapseTwo1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Communication Skills,Business analysts must be good communicators, Problem-Solving Skills, Critical Thinking Skills, Analysis & Communication Techniques are Both Key Sets of Business Analyst Skills, Business Analysis Tools,Self-Managing...
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
+                                  Database Developer
+                                  <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                              </h3>
+                </div>
+                <div id="collapseThree1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Ability to do Data Modelling, Physical Schema design for given Database, Database install, patching, high-availability & disaster recovery design, interaction with network and system administrators,Debugging and optimization skills...
+SQL skills
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour1">
+                                  Project Manager
+                                  <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                              </h3>
+                </div>
+                <div id="collapseFour1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    Leadership, Negotiation, Scheduling, Cost Control, Risk Management, Contract Management, Critical Thinking, Communication...
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/#accordion1-->
+          </div>
+        </div>
+
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.container-->
+  </section>
+  <!--/#middle-->
+
+  
+ </header>
+  <!--/header-->
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="social">
+            <ul class="social-share">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.container-->
+  </div>
+  <!--/.top-bar-->
+
+  <footer id="footer" class="midnight-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          &copy; AJS. All Rights Reserved.
+          
+        </div>
+        <div class="col-sm-6">
+          <ul class="pull-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Faq</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/#footer-->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="{{ url_for('static', filename='/js/jquery.js')}}"></script>
+  <script src="{{ url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='/js/jquery.prettyPhoto.js')}}"></script>
+  <script src="{{ url_for('static', filename='/js/jquery.isotope.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='/js/wow.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='/js/main.js')}}"></script>
+
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ 
+
+</body>
+
+</html>
